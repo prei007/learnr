@@ -275,6 +275,7 @@ install_knitr_hooks <- function() {
         all_chunks <- get_all_chunks(options)
 
         code_check_chunk <- get_knitr_chunk(paste0(options$label, "-code-check"))
+        error_check_chunk <- get_knitr_chunk(paste0(options$label, "-error-check"))
         check_chunk <- get_knitr_chunk(paste0(options$label, "-check"))
         solution <- get_knitr_chunk(paste0(options$label, "-solution"))
 
@@ -294,6 +295,7 @@ install_knitr_hooks <- function() {
         exercise_cache <- list(setup = all_setup_code,
                                chunks = all_chunks,
                                code_check = code_check_chunk,
+                               error_check = error_check_chunk,
                                check = check_chunk,
                                solution  = solution,
                                options = options,
